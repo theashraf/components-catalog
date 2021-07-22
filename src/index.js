@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Catalog from './Catalog';
+
+const { REACT_APP_TARGET } = process.env;
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {REACT_APP_TARGET === 'catalog' ? <Catalog /> : <App />}
   </React.StrictMode>,
   document.getElementById('root')
 );
